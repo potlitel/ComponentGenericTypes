@@ -1,0 +1,10 @@
+﻿@typeparam TItem
+@attribute [CascadingTypeParameter(nameof(TItem))]
+
+@* This provide a mechanism to provide cascading values -Items- to all descendant component*@
+<CascadingValue IsFixed="true" Value="Items">@ChildContent</CascadingValue>
+
+@code {
+    [Parameter] public IEnumerable<TItem> Items { get; set; } = null!;
+    [Parameter] public RenderFragment ChildContent { get; set; } = null!;
+}

@@ -1,0 +1,22 @@
+﻿@page "/"
+@using ComponentGenericTypes.Components
+@using ComponentGenericTypes.Data;
+@using GenFu
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<SimpleList Items="@people">
+    <ListItem>
+        <p>
+            Hallo <b>@context.FirstName @context.LastName</b><br />
+            @context.Email
+        </p>
+    </ListItem>
+</SimpleList>
+
+@code {
+    public IEnumerable<Person> people = A.ListOf<Person>(15);
+}
+
